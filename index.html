@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Centro Educacional de Ibiassucê | Calendário letivo 2026</title>
+<meta name="description" content="Datas importantes do ano letivo 2026 do Centro Educacional de Ibiassucê: unidades, sábados letivos, recessos e feriados.">
+<link rel="icon" href="brasao.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --azul:#17325a; --azul-2:#1f4e8c; --ouro:#e0b422; --oliva:#4d6b2f;
+  --fundo:#f4f6f9; --papel:#fff; --texto:#1c2430; --suave:#5b6470; --linha:#d9dee6;
+  --feriado:#b93a24; --sabado:#8a6408; --unidade:#1f4e8c; --admin:#3d6b2a; --data:#5b6470;
+  --titulo:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --corpo:"Public Sans",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--fundo);color:var(--texto);font:400 1rem/1.6 var(--corpo)}
+a{color:var(--azul-2)}
+:focus-visible{outline:3px solid var(--ouro);outline-offset:2px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+header{background:var(--azul);color:#fff;border-bottom:5px solid var(--ouro)}
+.marca{display:flex;align-items:center;gap:20px;padding:22px 0}
+.marca img{height:92px;width:auto;flex:none;background:#fff;border-radius:6px;padding:6px}
+.marca p{margin:0;color:#c9d6ea;font-size:.95rem}
+.marca h1{margin:2px 0 0;font:800 clamp(1.5rem,4vw,2.4rem)/1.1 var(--titulo);letter-spacing:-.01em}
+nav{background:#122748}
+nav .wrap{display:flex;gap:4px;flex-wrap:wrap}
+nav a{color:#fff;text-decoration:none;padding:10px 14px;font-weight:500;font-size:.95rem}
+nav a:hover{background:rgba(255,255,255,.12)}
+
+section{padding:44px 0 8px}
+h2{font:800 clamp(1.4rem,3vw,1.9rem)/1.15 var(--titulo);margin:0 0 6px;color:var(--azul)}
+.sub{margin:0 0 22px;color:var(--suave);max-width:60ch}
+
+/* próximos eventos */
+#proximos ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.prox{display:grid;grid-template-columns:76px 1fr auto;gap:16px;align-items:center;background:var(--papel);border:1px solid var(--linha);border-left:6px solid var(--cor,var(--azul-2));border-radius:8px;padding:12px 16px}
+.prox:first-child{background:var(--azul);color:#fff;border-color:var(--azul);border-left-color:var(--ouro)}
+.prox:first-child .quando,.prox:first-child .cat{color:#c9d6ea}
+.bloco{text-align:center;line-height:1}
+.bloco b{display:block;font:800 2rem/1 var(--titulo)}
+.bloco span{font-size:.85rem;font-weight:600}
+.prox h3{margin:0;font-size:1.05rem;font-weight:600}
+.cat{font-size:.85rem;color:var(--suave)}
+.quando{font-weight:600;color:var(--azul);white-space:nowrap}
+
+/* linha do ano */
+.ano{background:var(--papel);border:1px solid var(--linha);border-radius:8px;padding:22px 20px 18px}
+.trilho{position:relative;display:flex;height:44px;border-radius:6px;overflow:hidden}
+.trilho div{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:600;font-size:.9rem;padding:0 6px;text-align:center}
+.trilho div:nth-child(1){background:#2a5f9e}
+.trilho div:nth-child(2){background:#1f4e8c}
+.trilho div:nth-child(3){background:#17325a}
+.hoje{position:absolute;top:-6px;bottom:-6px;width:4px;background:var(--ouro);border-radius:2px;box-shadow:0 0 0 2px #fff}
+.datas{display:flex;margin-top:8px;font-size:.85rem;color:var(--suave)}
+.datas span{text-align:left}
+.ano p{margin:14px 0 0}
+.resumo{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:16px}
+.resumo div{border:1px solid var(--linha);border-radius:6px;padding:10px 14px}
+.resumo b{display:block;font:800 1.3rem/1.2 var(--titulo);color:var(--azul)}
+.resumo span{font-size:.9rem;color:var(--suave)}
+
+/* filtros e meses */
+.filtros{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 20px}
+.filtros button{font:500 .9rem var(--corpo);padding:7px 14px;border:1px solid var(--linha);background:var(--papel);border-radius:999px;cursor:pointer;color:var(--texto)}
+.filtros button[aria-pressed="true"]{background:var(--azul);color:#fff;border-color:var(--azul)}
+.meses{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.mes{background:var(--papel);border:1px solid var(--linha);border-radius:8px;overflow:hidden}
+.mes header{background:none;border:0;color:inherit;display:flex;justify-content:space-between;align-items:baseline;padding:12px 16px;border-bottom:1px solid var(--linha)}
+.mes h3{margin:0;font:800 1.15rem var(--titulo);color:var(--azul)}
+.mes small{color:var(--suave);font-size:.85rem}
+.mes ul{list-style:none;margin:0;padding:6px 0}
+.mes li{display:grid;grid-template-columns:92px 1fr;gap:10px;padding:7px 16px;border-left:5px solid var(--cor)}
+.mes li.passou{opacity:.55}
+.dia{font-weight:600;font-size:.9rem;color:var(--cor)}
+.tit{font-size:.95rem;line-height:1.35}
+.tit em{display:block;font-style:normal;font-size:.8rem;color:var(--suave)}
+.vazio{padding:12px 16px;color:var(--suave);font-size:.9rem}
+.legenda{font-size:.85rem;color:var(--suave);margin-top:16px}
+
+/* avisos e contato */
+.duas{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.caixa{background:var(--papel);border:1px solid var(--linha);border-radius:8px;padding:20px}
+.caixa h3{margin:0 0 10px;font:800 1.15rem var(--titulo);color:var(--azul)}
+.caixa ul{margin:0;padding-left:18px}
+.caixa li{margin-bottom:6px}
+.caixa dl{margin:0}.caixa dt{font-weight:600;margin-top:8px}.caixa dd{margin:0;color:var(--suave)}
+
+footer{margin-top:48px;background:var(--azul);color:#c9d6ea;padding:24px 0;font-size:.9rem;border-top:5px solid var(--ouro)}
+footer p{margin:2px 0}
+
+@media (max-width:600px){
+  .marca{gap:14px}.marca img{height:68px}
+  .prox{grid-template-columns:60px 1fr}.quando{grid-column:2}
+  .mes li{grid-template-columns:78px 1fr}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap marca">
+    <img src="brasao.png" alt="Brasão do município de Ibiassucê">
+    <div>
+      <p>Prefeitura Municipal de Ibiassucê – Bahia</p>
+      <h1>Centro Educacional de Ibiassucê</h1>
+    </div>
+  </div>
+  <nav aria-label="Seções da página">
+    <div class="wrap">
+      <a href="#proximos">Próximos eventos</a>
+      <a href="#ano">Ano letivo</a>
+      <a href="#calendario">Calendário 2026</a>
+      <a href="#avisos">Avisos e contato</a>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap">
+
+  <section id="proximos" aria-labelledby="t-prox">
+    <h2 id="t-prox">Próximos eventos</h2>
+    <p class="sub">As próximas datas do calendário escolar, a partir de hoje.</p>
+    <ul id="lista-prox"></ul>
+  </section>
+
+  <section id="ano" aria-labelledby="t-ano">
+    <h2 id="t-ano">O ano letivo em três unidades</h2>
+    <p class="sub">O ano letivo de 2026 vai de 9 de fevereiro a 11 de dezembro, com 200 dias letivos.</p>
+    <div class="ano">
+      <div class="trilho" id="trilho" role="img" aria-label="Linha do tempo das três unidades do ano letivo"></div>
+      <div class="datas" id="datas"></div>
+      <p id="situacao"></p>
+      <div class="resumo">
+        <div><b>1ª unidade</b><span>09/02 a 23/05 · 69 dias letivos</span></div>
+        <div><b>2ª unidade</b><span>25/05 a 12/09 · 71 dias letivos</span></div>
+        <div><b>3ª unidade</b><span>14/09 a 11/12 · 60 dias letivos</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="calendario" aria-labelledby="t-cal">
+    <h2 id="t-cal">Calendário letivo 2026</h2>
+    <p class="sub">Feriados, recessos, sábados letivos e marcos de cada unidade, mês a mês.</p>
+    <div class="filtros" id="filtros" role="group" aria-label="Filtrar por tipo de data"></div>
+    <div class="meses" id="meses"></div>
+    <p class="legenda">Sábados letivos são dias de aula que substituem dias sem aula em outros momentos do ano. Datas sujeitas a alteração pela Secretaria Municipal de Educação e Cultura.</p>
+  </section>
+
+  <section id="avisos" aria-labelledby="t-av">
+    <h2 id="t-av">Avisos e contato</h2>
+    <p class="sub">Informações para famílias, alunos e funcionários.</p>
+    <div class="duas">
+      <div class="caixa">
+        <h3>Avisos da escola</h3>
+        <!-- Edite os itens abaixo sempre que houver um novo aviso. -->
+        <ul>
+          <li>Consulte esta página para conferir sábados letivos e recessos antes de planejar viagens e compromissos.</li>
+          <li>Os avisos da secretaria são publicados aqui. <strong></strong></li>
+        </ul>
+      </div>
+      <div class="caixa">
+        <h3>Contato</h3>
+        <dl>
+          <dt>Endereço</dt><dd>Rua Benedito Nascimento, nº 37, Centro, Ibiassucê – BA</dd>
+          <dt>E-mail institucional</dt><dd><a href="mailto:cei.eduibce2017@gmail.com">cei.eduibce2017@gmail.com</a></dd>
+          <dt>E-mail da secretaria</dt><dd><a href="mailto:inesraisilva@gmail.com">inesraisilva@gmail.com</a></dd>
+        </dl>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Centro Educacional de Ibiassucê</strong></p>
+    <p>Secretaria Municipal de Educação e Cultura · Ibiassucê – Bahia</p>
+    <p>Calendário Acadêmico Letivo 2026.</p>
+  </div>
+</footer>
+
+<script>
+const ANO = 2026;
+const MESES = ["Janeiro","Fevereiro","Março","Abril","Maio","Junho","Julho","Agosto","Setembro","Outubro","Novembro","Dezembro"];
+const DIAS_LETIVOS = [0,11,23,19,21,14,21,22,22,20,20,7];
+const TIPOS = {
+  feriado:["Feriados e recessos","var(--feriado)"],
+  sabado:["Sábados letivos","var(--sabado)"],
+  unidade:["Início e término de unidade","var(--unidade)"],
+  admin:["Atividades escolares","var(--admin)"],
+  data:["Datas comemorativas","var(--data)"]
+};
+// [mês, dia inicial, dia final, texto do dia, título, tipo]
+const EV = [
+ [1,1,1,"01","Confraternização Universal","feriado"],
+ [1,7,15,"07 a 15","Período de matrícula","admin"],
+ [1,20,20,"20","Dia do Padroeiro São Sebastião","feriado"],
+ [2,2,4,"02, 03 e 04","Jornada Pedagógica","admin"],
+ [2,9,9,"09","Início do ano letivo e da 1ª unidade","unidade"],
+ [2,13,18,"13, 16, 17 e 18","Recesso de Carnaval","feriado"],
+ [3,8,8,"08","Dia Internacional da Mulher","data"],
+ [3,28,28,"28","Sábado letivo","sabado"],
+ [4,2,3,"02 e 03","Recesso da Semana Santa","feriado"],
+ [4,20,20,"20","Recesso de Tiradentes","feriado"],
+ [4,21,21,"21","Tiradentes","feriado"],
+ [4,25,25,"25","Sábado letivo","sabado"],
+ [5,1,1,"01","Dia do Trabalhador","feriado"],
+ [5,23,23,"23","Sábado letivo e término da 1ª unidade","unidade"],
+ [5,25,25,"25","Início da 2ª unidade letiva","unidade"],
+ [6,4,5,"04 e 05","Recesso de Corpus Christi","feriado"],
+ [6,5,5,"05","Dia Mundial do Meio Ambiente","data"],
+ [6,13,13,"13","Sábado letivo (culminância do projeto junino)","sabado"],
+ [6,22,30,"22 a 30","Recesso junino (parte I)","feriado"],
+ [7,1,3,"01, 02 e 03","Recesso junino (parte II)","feriado"],
+ [7,2,2,"02","Independência da Bahia","feriado"],
+ [7,18,18,"18","Emancipação Política de Ibiassucê","feriado"],
+ [7,25,25,"25","Sábado letivo","sabado"],
+ [8,11,11,"11","Dia do Estudante","data"],
+ [8,29,29,"29","Sábado letivo","sabado"],
+ [9,7,7,"07","Independência do Brasil","feriado"],
+ [9,12,12,"12","Sábado letivo e término da 2ª unidade","unidade"],
+ [9,14,14,"14","Início da 3ª unidade","unidade"],
+ [10,12,12,"12","Dia de Nossa Senhora Aparecida e Dia das Crianças","feriado"],
+ [10,15,15,"15","Dia do Professor","feriado"],
+ [10,24,24,"24","Sábado letivo","sabado"],
+ [10,28,28,"28","Dia do Funcionário Público","feriado"],
+ [11,2,2,"02","Finados","feriado"],
+ [11,15,15,"15","Proclamação da República","feriado"],
+ [11,20,20,"20","Dia da Consciência Negra","feriado"],
+ [11,28,28,"28","Sábado letivo","sabado"],
+ [12,7,7,"07","Véspera de feriado (ponto facultativo)","feriado"],
+ [12,8,8,"08","Dia da co-padroeira de Ibiassucê, N. Sª da Conceição","feriado"],
+ [12,11,11,"11","Final da 3ª unidade e do ano letivo","unidade"],
+ [12,14,14,"14","Resultados parciais do ano letivo","admin"],
+ [12,15,18,"15 a 18","Recuperação anual","admin"],
+ [12,21,21,"21","Conselho de Classe final","admin"],
+ [12,28,28,"28","Entrega das atas de resultados finais","admin"]
+].map(([m,i,f,txt,t,tipo]) => ({m,i,f,txt,t,tipo,ini:new Date(ANO,m-1,i),fim:new Date(ANO,m-1,f)}));
+
+const hoje = new Date(); hoje.setHours(0,0,0,0);
+const DIA = 86400000;
+const fmt = d => String(d.getDate()).padStart(2,"0")+"/"+String(d.getMonth()+1).padStart(2,"0");
+
+/* Próximos eventos */
+(function(){
+  const ul = document.getElementById("lista-prox");
+  const prox = EV.filter(e => e.fim >= hoje).sort((a,b)=>a.ini-b.ini).slice(0,5);
+  if(!prox.length){ ul.innerHTML = '<li class="vazio">O calendário letivo de 2026 chegou ao fim. Aguarde o calendário do próximo ano.</li>'; return; }
+  ul.innerHTML = prox.map(e => {
+    const emCurso = e.ini <= hoje;
+    const dias = Math.round((e.ini - hoje)/DIA);
+    const quando = emCurso ? "Acontecendo agora" : dias===1 ? "Amanhã" : "Em "+dias+" dias";
+    return `<li class="prox" style="--cor:${TIPOS[e.tipo][1]}">
+      <div class="bloco"><b>${String(e.i).padStart(2,"0")}</b><span>${MESES[e.m-1].slice(0,3)}</span></div>
+      <div><h3>${e.t}</h3><span class="cat">${TIPOS[e.tipo][0]}${e.i!==e.f?" · "+e.txt:""}</span></div>
+      <div class="quando">${quando}</div></li>`;
+  }).join("");
+})();
+
+/* Linha do ano */
+(function(){
+  const marcos = [new Date(ANO,1,9), new Date(ANO,4,25), new Date(ANO,8,14), new Date(ANO,11,11)];
+  const total = marcos[3]-marcos[0];
+  const tr = document.getElementById("trilho");
+  const nomes = ["1ª unidade","2ª unidade","3ª unidade"];
+  tr.innerHTML = nomes.map((n,k)=>`<div style="width:${(marcos[k+1]-marcos[k])/total*100}%">${n}</div>`).join("");
+  document.getElementById("datas").innerHTML = `<span style="width:${(marcos[1]-marcos[0])/total*100}%">09/02</span><span style="width:${(marcos[2]-marcos[1])/total*100}%">25/05</span><span style="width:${(marcos[3]-marcos[2])/total*100}%">14/09</span><span style="margin-left:auto">11/12</span>`;
+  const sit = document.getElementById("situacao");
+  if(hoje < marcos[0]){ sit.textContent = "O ano letivo começa em 9 de fevereiro."; }
+  else if(hoje > marcos[3]){ sit.textContent = "O ano letivo de 2026 já terminou."; }
+  else {
+    const k = hoje >= marcos[2] ? 2 : hoje >= marcos[1] ? 1 : 0;
+    const marca = document.createElement("span"); marca.className="hoje";
+    marca.style.left = "calc("+((hoje-marcos[0])/total*100)+"% - 2px)";
+    tr.appendChild(marca);
+    const fim = k===0 ? "23 de maio" : k===1 ? "12 de setembro" : "11 de dezembro";
+    sit.innerHTML = "Hoje estamos na <strong>"+nomes[k]+"</strong>, que termina em "+fim+".";
+  }
+})();
+
+/* Calendário mês a mês com filtro */
+const fEl = document.getElementById("filtros"), mEl = document.getElementById("meses");
+let filtro = "todos";
+function desenhar(){
+  fEl.innerHTML = [["todos","Todas as datas"],...Object.entries(TIPOS).map(([k,v])=>[k,v[0]])]
+    .map(([k,n])=>`<button type="button" data-k="${k}" aria-pressed="${k===filtro}">${n}</button>`).join("");
+  mEl.innerHTML = MESES.map((nome,idx)=>{
+    const lista = EV.filter(e=>e.m===idx+1 && (filtro==="todos"||e.tipo===filtro));
+    const itens = lista.length ? lista.map(e=>`<li class="${e.fim<hoje?"passou":""}" style="--cor:${TIPOS[e.tipo][1]}">
+        <span class="dia">${e.txt}</span><span class="tit">${e.t}<em>${TIPOS[e.tipo][0]}</em></span></li>`).join("")
+      : '<li class="vazio" style="border-left-color:transparent;display:block">Nenhuma data deste tipo.</li>';
+    return `<article class="mes"><header><h3>${nome}</h3><small>${DIAS_LETIVOS[idx]} dias letivos</small></header><ul>${itens}</ul></article>`;
+  }).join("");
+}
+fEl.addEventListener("click", ev=>{
+  const b = ev.target.closest("button"); if(!b) return;
+  filtro = b.dataset.k; desenhar();
+  fEl.querySelector('[aria-pressed="true"]').focus();
+});
+desenhar();
+</script>
+</body>
+</html>
